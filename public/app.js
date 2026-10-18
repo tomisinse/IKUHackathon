@@ -155,13 +155,25 @@ function resultsView() {
     let items = '';
     for (const t of r.guide.say) {
       const phraseText = typeof t === 'string' ? t : (t.them || t.me);
-      items += '<div class="turn-item" style="margin-bottom:1rem; padding:0.8rem; background:#fff; border-radius:12px;"><p><strong>Them:</strong> "' + esc(t.them || '') + '"</p><p><strong>You:</strong> "' + esc(t.me || '') + '"</p><button data-say="' + esc(phraseText) + '">🔊 Listen</button></div>';
+      items += '<div class="turn-item" style="margin-bottom:1rem; padding:0.8rem; background:#fff; border-radius:12px;">' +
+        '<p class="big" ' + attr(st.they) + '>' + esc(t.them || '') + '</p>' +
+        '<p style="color:var(--muted); margin:0 0 .8rem;">' + esc(t.me || '') + '</p>' +
+        '<div style="display:flex; gap:.5rem; flex-wrap:wrap;">' +
+          '<button class="small" style="background:var(--ink); color:#fff;" data-show="' + esc(phraseText) + '">Show them</button>' +
+          '<button class="small" data-say="' + esc(phraseText) + '">🔊 Listen</button>' +
+        '</div></div>';
     }
     scriptHtml = '<div class="means"><h3>Practice Phrases</h3><div class="turns">' + items + '</div></div>';
   } else if (r.script && r.script.length > 0) {
     let items = '';
     for (const t of r.script) {
-      items += '<div class="turn-item" style="margin-bottom:1rem; padding:0.8rem; background:#fff; border-radius:12px;"><strong>' + esc(t.speaker) + ':</strong><p>"' + esc(t.text) + '"</p><button data-say="' + esc(t.text) + '">🔊 Listen</button></div>';
+      items += '<div class="turn-item" style="margin-bottom:1rem; padding:0.8rem; background:#fff; border-radius:12px;">' +
+        '<strong>' + esc(t.speaker) + ':</strong>' +
+        '<p class="big" ' + attr(st.they) + '>' + esc(t.text) + '</p>' +
+        '<div style="display:flex; gap:.5rem; flex-wrap:wrap;">' +
+          '<button class="small" style="background:var(--ink); color:#fff;" data-show="' + esc(t.text) + '">Show them</button>' +
+          '<button class="small" data-say="' + esc(t.text) + '">🔊 Listen</button>' +
+        '</div></div>';
     }
     scriptHtml = '<div class="means"><h3>Practice Conversation Script</h3><div class="turns">' + items + '</div></div>';
   }
@@ -194,6 +206,26 @@ function render() {
   window.scrollTo(0, 0);
 }
 
+// --- "SHOW THEM" FULL-SCREEN OVERLAY ---
+let lastFocus = null;
+function showOver(text) {
+  const o = $('#overText');
+  if (!o) return;
+  o.textContent = text;
+  o.lang = st.they;
+  o.dir = (L[st.they] && L[st.they].rtl) ? 'rtl' : 'ltr';
+  $('#overClose').textContent = 'Tap anywhere to close';
+  lastFocus = document.activeElement;
+  $('#over').classList.add('on');
+  $('#over').focus();
+}
+function hideOver() {
+  const over = $('#over');
+  if (!over) return;
+  over.classList.remove('on');
+  if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+}
+
 // --- EVENT LISTENERS ---
 document.addEventListener('click', async e => {
   const b = e.target.closest('button');
@@ -202,6 +234,7 @@ document.addEventListener('click', async e => {
 
   if ('upload' in d) { $('#file').click(); }
   else if ('say' in d) { say(d.say); }
+  else if ('show' in d) { showOver(d.show); }
   else if ('back' in d) {
     st.view = 'home';
     render();
@@ -281,5 +314,9 @@ document.addEventListener('change', e => {
 });
 
 document.addEventListener('input', e => { if (e.target.id === 'sit') st.text = e.target.value; });
+
+const overEl = $('#over');
+if (overEl) overEl.addEventListener('click', hideOver);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') hideOver(); });
 
 render();
