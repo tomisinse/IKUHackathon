@@ -1,0 +1,105 @@
+{
+  "country": "UK",
+  "bank": {
+    "title": "Opening a bank account",
+    "steps": [
+      "Choose a bank; book an appointment online or walk in. Many banks also open accounts in the app.",
+      "Staff check identity and address, then ask about your status (student / worker) and why you want the account.",
+      "Student accounts usually need proof of study; worker accounts usually need proof of employment.",
+      "Card and PIN arrive by post to your UK address in about 5-7 working days."
+    ],
+    "bring": [
+      "Passport",
+      "Visa or eVisa share code (gov.uk)",
+      "University enrolment letter or employment contract",
+      "Proof of UK address if you have one (tenancy agreement, university accommodation letter)"
+    ],
+    "pitfalls": [
+      "Proof of address is the most common blocker; ask whether a university or accommodation letter is accepted.",
+      "Some banks only accept a letter sent to your UK address, so ask about the exact rules.",
+      "Digital banks can be an alternative if a high-street bank refuses."
+    ]
+  },
+  "gp": {
+    "title": "Registering with a GP (doctor)",
+    "steps": [
+      "Find a nearby surgery on the NHS website (nhs.uk, 'Find a GP').",
+      "Ask at reception or online for the new patient registration form (often called GMS1 or a local form).",
+      "Fill it in; you will be asked for name, address, date of birth and any medical history.",
+      "You may be invited for a short new-patient check. Registration is free."
+    ],
+    "bring": [
+      "Passport or other ID if you have it",
+      "Your address and a phone number",
+      "List of medicines you take, if any"
+    ],
+    "pitfalls": [
+      "Surgeries should not refuse registration only because you lack ID or proof of address.",
+      "For emergencies call 999; for urgent non-emergencies call 111.",
+      "Register early, before you are ill."
+    ]
+  },
+  "landlord": {
+    "title": "Renting a home",
+    "steps": [
+      "Search on listing sites and book viewings. Ask about total monthly cost, including bills and council tax.",
+      "The agent or landlord runs referencing: ID, right to rent check, income or student status, and often a UK guarantor.",
+      "Read the tenancy agreement before signing; ask what the deposit is protected under.",
+      "Pay the deposit (max 5 weeks' rent for most tenancies in England) and holding deposit; get receipts."
+    ],
+    "bring": [
+      "Passport",
+      "Visa or eVisa share code for the right to rent check",
+      "Proof of income, funding or student status",
+      "Guarantor details if required"
+    ],
+    "pitfalls": [
+      "Never pay a deposit or rent before a viewing and a written agreement.",
+      "Ask for the deposit protection scheme certificate within 30 days.",
+      "International students without a UK guarantor may be asked for rent upfront; ask what alternatives exist."
+    ]
+  },
+  "shopping": {
+    "title": "Shopping and everyday payments",
+    "steps": [
+      "Most shops take contactless card or phone payments (usually up to 100 pounds without a PIN). Cash is accepted but less common.",
+      "In supermarkets you can use a self-checkout or a staffed till. Ask a member of staff if the machine shows an error.",
+      "Shops may ask if you want a bag; there is a small charge for carrier bags (about 5-10p depending on the nation).",
+      "Keep your receipt. You need it for returns, refunds and faulty goods."
+    ],
+    "bring": [
+      "A contactless debit card or phone wallet",
+      "Photo ID if buying alcohol or other age-restricted items (many shops ask anyone who looks under 25)",
+      "Your own bag",
+      "Receipt for anything you may return"
+    ],
+    "pitfalls": [
+      "Prices on shelves already include VAT, so there is no extra tax at the till.",
+      "Loyalty cards (e.g. Clubcard, Nectar) are optional and free; you do not need one to shop.",
+      "If an item is faulty you usually have 30 days to reject it for a refund. For online orders you can generally cancel within 14 days.",
+      "Large shops in England and Wales usually open for a shorter time on Sundays, often about 6 hours."
+    ]
+  },
+  "visa": {
+    "title": "Immigration status and visas",
+    "steps": [
+      "Use only official GOV.UK pages for visa applications, status checks and updates. Search 'GOV.UK visas and immigration'.",
+      "Most people now prove their status online with an eVisa. Use 'View and prove your immigration status' on GOV.UK to see your status or create a share code.",
+      "Landlords and employers may ask for a share code. You create it yourself on GOV.UK; it is free and lasts a limited time.",
+      "Keep your passport, application reference and any Home Office emails safe, and check your details are correct."
+    ],
+    "bring": [
+      "Passport",
+      "Application reference or Home Office email",
+      "Your UKVI account details (email and phone used to apply)",
+      "Any letters from the Home Office"
+    ],
+    "pitfalls": [
+      "Never pay a third party to get a share code or log in to your account; GOV.UK does not charge for this.",
+      "Beware of scam calls, texts or emails claiming to be the Home Office and asking for payment.",
+      "Rules and fees change often. Always check the current GOV.UK page and your own decision letter.",
+      "For complex cases, refusals or deadlines, get free or regulated advice (e.g. a university advice service, Citizens Advice, or an OISC-registered adviser). This tool cannot give legal advice."
+    ]
+  }
+}
+
